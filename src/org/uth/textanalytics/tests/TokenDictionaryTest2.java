@@ -97,7 +97,7 @@ public class TokenDictionaryTest2
     
     for( String sentence : sentences )
     {
-      Chunk chunk = new Chunk();
+      Chunk chunk = new Chunk(dictionary);
       
       List<String> words = SentenceParser.getWords(sentence);
       

@@ -13,22 +13,25 @@ import java.util.Map;
 public class Chunk
 {
   private List<Integer> _components = null;
+  private TokenDictionary _dictionary = null;
   
   /**
    * Standard constructor.
    */
-  public Chunk()
+  public Chunk( TokenDictionary dictionary )
   {
     _components = new ArrayList<>();
+    _dictionary = dictionary;
   }
   
   /**
    * Deep copy constructor.
    * @param existingList existing IDs to store
    */
-  public Chunk( List<Integer> existingList )
+  public Chunk( List<Integer> existingList, TokenDictionary dictionary )
   {
     _components = new ArrayList<>();
+    _dictionary = dictionary;
     
     // Deep copy
     for( Integer member : existingList )
@@ -151,5 +154,15 @@ public class Chunk
     }
     
     return workingFreqs;
+  }
+
+  /**
+   * Dictionary lookup.
+   * @param target ID to get actual word for
+   * @return actual word or null if none exists
+   */
+  public String dictionaryLookup( int target )
+  {
+    return _dictionary.get(target);
   }
 }
