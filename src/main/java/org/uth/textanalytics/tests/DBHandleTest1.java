@@ -25,10 +25,6 @@ public class DBHandleTest1
   
   public DBHandleTest1( String connectionString, String driverClass, String username, String password, boolean remove )
   {
-    System.out.println( "Params:");
-    System.out.println( "Connection String: " + connectionString );
-    System.out.println( "Driver Class:" + driverClass );
-    
     // Step 1 - populate an Ngram database
     Map<Integer,NGrams> testInput = new HashMap<>();
     

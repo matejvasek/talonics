@@ -40,6 +40,8 @@ public class DBHandle
    */
   public void connect( String connectionString, String driverClassName ) throws SQLException, ClassNotFoundException
   {
+    System.out.println( "Driver Class: " + driverClassName );
+    
     Properties connectionProps = new Properties();
     
     connectionProps.put("user", _username);
